@@ -1,17 +1,23 @@
 import React from 'react'
-
+import { useRef, useState } from 'react'
 function Personal() {
+  const firstName = useRef();
+  const lastName = useRef();
+  const phoneNumber = useRef();
+  const title = useRef();
+  const [user,setUser] = useState({});
+  
   return (
     <div>
-      <h1> Personal education </h1>
-      <div className="inputs">
-        <input placeholder='First name' type="text" />
-        <input placeholder='Last name' type="text" />
-        <input placeholder='Title' type="text" />
-        <input placeholder='' type="text" />
-        <input placeholder='Phone number' type="text" />
-        <input placeholder='Email' type="email" />
-        <input placeholder='Description' type="text" />
+      <h1 className='flex justify-center py-8 font-bold  '> Personal information : </h1>
+      <div className="flex align-center justify-center">
+        <div className="flex flex-col justify-center max-w-4xl align-middle bg-slate-800 p-10 rounded">
+          <input className='w-[30vw] p-2 m-1' ref={firstName} placeholder='First name' type="text" />
+          <input className='p-2 m-1' ref={lastName} placeholder='Last name' type="text" />
+          <input className='p-2 m-1' ref={title} placeholder='Title' type="text" />
+          <input className='p-2 m-1' placeholder='' type="text" />
+          <input className='p-2 m-1' ref={phoneNumber} placeholder='Phone number' type="text" />
+        </div>
       </div>
     </div>
   )
