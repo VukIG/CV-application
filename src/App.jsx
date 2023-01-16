@@ -4,7 +4,14 @@ import Personal from './Education'
 import Experience from './Experience'
 import Banner from './Banner'
 import Footer from './Footer'
+
+import { useState } from 'react'
+
 function App() {
+
+  const [education, setEducation] = useState({ city: "", degree: "", subject: "", from: "", to: "" });
+  const [personal, setPersonal] = useState({ city: "", company: "", position: "", from: "", to: "" });
+  const [experience, setExperience] = useState({ firstName: "", lastName: "", title: "", phoneNumber: "" });
 
   return (
     <div className="font-normal">
@@ -12,9 +19,9 @@ function App() {
       <div className="flex flex-row justify-around align-center">
         <div className="flex flex-col">
           
-          <Education/>
-          <Personal/>
-          <Experience/>
+          <Education education={education} setEducation={setEducation}/>
+          <Personal personal={personal} setPersonal={setPersonal}/>
+          <Experience experience={experience} setExperience={setExperience}/>
       
         </div>
         <Preview/>

@@ -1,6 +1,18 @@
 import React from 'react'
+import { useState } from 'react'
 
-function Education() {
+function Education( { education, setEducation } ) {
+
+  const [city, setCity] = useState(education.city);
+  const [degree, setDegree] = useState(education.degree);
+  const [subject, setSubject] = useState(education.subject);
+  const [from, setFrom] = useState(education.from);
+  const [to, setTo] = useState(education.to);
+
+  function newEducation() {
+    
+  }
+
   return (
     <div>
       <h1 className='flex justify-center py-8 font-bold  '> Education : </h1>
