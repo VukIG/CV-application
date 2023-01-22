@@ -2,10 +2,15 @@ import React from 'react'
 import { useState } from 'react'
 function Personal({ personal, setPersonal }) {
   
-  const [firstname, setFirstName] = useState(personal.firstname);
-  const [lastname, setLastName] = useState(personal.lastname);
+  const [firstname, setFirstName] = useState(personal.firstName);
+  const [lastname, setLastName] = useState(personal.lastName);
   const [title, setTitle] = useState(personal.title);
-  const [phonenumber, setPhoneNumber] = useState(personal.phonenumber);
+  const [phonenumber, setPhoneNumber] = useState(personal.phoneNumber);
+
+  const handlePhoneNumberChange = (e) => {
+    setPhoneNumber(e.target.value);
+    setPersonal({...personal, phoneNumber: e.target.value});
+  }
 
   return (
     <div>
@@ -13,35 +18,32 @@ function Personal({ personal, setPersonal }) {
       <div className="flex align-center justify-center">
         <div className="flex flex-col justify-center max-w-4xl align-middle bg-slate-800 p-10 rounded">
           <input className='w-[30vw] p-2 m-1' 
-            value={firstname}
-            onChange = { (e) => { 
+            defaultValue={firstname}
+            onBlur = { (e) => { 
               setFirstName(e.target.value);
-              setPersonal({...personal, firstname: e.target.value}); 
+              setPersonal({...personal, firstName: e.target.value}); 
             }}
             placeholder='First name' type="text" 
           />
           <input className='p-2 m-1'
-            value={lastname}
-            onChange = { (e) => { 
+            defaultValue={lastname}
+            onBlur = { (e) => { 
               setLastName(e.target.value);
-              setPersonal({...personal, lastname: e.target.value}); 
+              setPersonal({...personal, lastName: e.target.value}); 
             }} 
             placeholder='Last name' type="text" 
           />
           <input className='p-2 m-1'  
-            value={title}
-            onChange = { (e) => { 
+            defaultValue={title}
+            onBlur = { (e) => { 
               setTitle(e.target.value);
               setPersonal({...personal, title: e.target.value}); 
             }} 
             placeholder='Title' type="text" 
           />
           <input className='p-2 m-1'  
-            value={phonenumber}
-            onChange = { (e) => { 
-              setTitle(e.target.value);
-              setPhoneNumber({...personal, phonenumber: e.target.value}); 
-            }} 
+            defaultValue={phonenumber}
+            onBlur = { (e) => handlePhoneNumberChange(e)} 
             placeholder='Phone number' type="text"
           />
         </div>

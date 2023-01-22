@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Experience() {
+function Experience({ experience, setExperience }) {
   return (
     <div>
       <h1 className='flex justify-center py-8 font-bold '> Experience : </h1>
@@ -11,8 +11,8 @@ function Experience() {
           <input className='p-2 m-1'placeholder='City' type="text" />
           <input className='p-2 m-1'placeholder='From' type="text" />
           <input className='p-2 m-1'placeholder='To' type="text" />
-          <button className=' p-2 m-1 bg-red-800 text-white'>Delete</button>
-          <button className=' p-2 m-1 bg-green-800 text-white'>Add</button>
+          <button className=' p-2 m-1 bg-red-800 text-white hover:bg-red-700'>Delete</button>
+          <button className=' p-2 m-1 bg-green-800 text-white hover:bg-green-700'>Add</button>
         </div>
       </div>
     </div>
