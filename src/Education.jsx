@@ -32,7 +32,7 @@ function Education( { education, setEducation } ) {
             value={university}
             onChange = { (e) => { 
               setUniversity(e.target.value);
-              setEducation({...personal, university: e.target.value}); 
+              setEducation({...education, university: e.target.value}); 
             }}
             placeholder='University name' type="text" 
           />
@@ -40,7 +40,7 @@ function Education( { education, setEducation } ) {
             value={city}
             onChange = { (e) => { 
               setCity(e.target.value);
-              setEducation({...personal, city: e.target.value}); 
+              setEducation({...education, city: e.target.value}); 
             }}
             placeholder='City' type="text" 
           />
@@ -48,7 +48,7 @@ function Education( { education, setEducation } ) {
             value={degree}
             onChange = { (e) => { 
               setDegree(e.target.value);
-              setEducation({...personal, degree: e.target.value}); 
+              setEducation({...education, degree: e.target.value}); 
             }}
             placeholder='Degree' type="text" 
           />
@@ -56,7 +56,7 @@ function Education( { education, setEducation } ) {
             value={subject}
             onChange = { (e) => { 
               setSubject(e.target.value);
-              setEducation({...personal, subject: e.target.value}); 
+              setEducation({...education, subject: e.target.value}); 
             }}
             placeholder='Subject' type="text" 
           />
@@ -64,7 +64,7 @@ function Education( { education, setEducation } ) {
             value={from}
             onChange = { (e) => { 
               setFrom(e.target.value);
-              setEducation({...personal, from: e.target.value}); 
+              setEducation({...education, from: e.target.value}); 
             }}
             placeholder='From' type="text" 
           />
@@ -72,7 +72,7 @@ function Education( { education, setEducation } ) {
             value={to}
             onChange = { (e) => { 
               setTo(e.target.value);
-              setEducation({...personal, to: e.target.value}); 
+              setEducation({...education, to: e.target.value}); 
             }}
             placeholder='To' type="text" 
           />

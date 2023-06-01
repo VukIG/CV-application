@@ -6,7 +6,9 @@ function Personal({ personal, setPersonal }) {
   const [lastname, setLastName] = useState(personal.lastName);
   const [title, setTitle] = useState(personal.title);
   const [phonenumber, setPhoneNumber] = useState(personal.phoneNumber);
-
+  const [adress, setAdress] = useState(personal.adress);
+  const [email, setEmail] = useState(personal.email);
+  const [shortbio, setShortBio] = useState(personal.shortbio)
   const handlePhoneNumberChange = (e) => {
     setPhoneNumber(e.target.value);
     setPersonal({...personal, phoneNumber: e.target.value});
@@ -42,9 +44,33 @@ function Personal({ personal, setPersonal }) {
             placeholder='Title' type="text" 
           />
           <input className='p-2 m-1'  
+            defaultValue={adress}
+            onBlur = { (e) => { 
+              setAdress(e.target.value);
+              setPersonal({...personal, adress: e.target.value}); 
+            }} 
+            placeholder='Adress' type="text" 
+          />
+          <input className='p-2 m-1'  
+            defaultValue={email}
+            onBlur = { (e) => { 
+              setEmail(e.target.value);
+              setPersonal({...personal, email: e.target.value}); 
+            }} 
+            placeholder='Email' type="text" 
+          />
+          <input className='p-2 m-1'  
             defaultValue={phonenumber}
             onBlur = { (e) => handlePhoneNumberChange(e)} 
             placeholder='Phone number' type="text"
+          />
+          <input className='p-2 m-1 w-50 h-40'  
+            defaultValue={shortbio}
+            onBlur = { (e) => { 
+              setShortBio(e.target.value);
+              setPersonal({...personal, shortbio: e.target.value}); 
+            }} 
+            placeholder='Short Biography' type="text"
           />
         </div>
       </div>
